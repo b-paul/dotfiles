@@ -1,0 +1,12 @@
+#!/bin/sh
+
+battery=$(cat /sys/class/power_supply/BAT0/capacity)
+condition=$(cat /sys/class/power_supply/BAT0/status)
+
+if [ $condition = "Charging" ]; then
+    echo "🔌$battery"
+elif [ $condition = "Discharging" ]; then
+    echo "🔋$battery"
+else
+    echo "🔋Full"
+fi

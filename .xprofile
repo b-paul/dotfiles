@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export THEME=$1
+
+set-wallpaper &
+picom -CGb &
+~/.screenlayout/config.sh
+[[ $2 == dwm ]] && dwmblocks &
+xrdb ~/.config/xresource-themes/$1
+~/.config/polybar/launch.sh $1
+xsetroot -cursor_name left_ptr

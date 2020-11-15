@@ -1,0 +1,7 @@
+#!/bin/sh
+
+emoji=$(cut -d ';' -f1 ~/.helpers/emoji | dmenu -i -l 30 | sed "s/ .*//")
+
+[ -z emoji ] && exit
+
+echo "$emoji" | tr -d "\n" | xclip -selection clipboard

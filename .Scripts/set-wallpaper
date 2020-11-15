@@ -1,0 +1,11 @@
+#!/bin/sh
+
+file=$1
+
+[ -f $1 ] && file=~/.config/wall.${file##*.}
+[ -d $1 ] && file=$(find $1 -maxdepth 1 | shuf -n 1)
+[ -z $1 ] && file=$(find ~/Wallpapers/$THEME -maxdepth 1 | shuf -n 1)
+
+#wal -i $file
+
+xwallpaper --zoom $file
