@@ -1,3 +1,11 @@
+#          _
+#         | |
+#  _______| |__  _ __ ___
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__
+# /___|___/_| |_|_|  \___|
+#
+
 # Add colour support and set prompt
 autoload -U colors && colors
 #PS1='%F{green}%n%f@%F{blue}%m%f %F{white}%B%~%b%f $ '
@@ -21,14 +29,23 @@ bindkey ';5C' forward-word
 
 # Definitions
 export EDITOR='nvim'
+export TERM='st'
 
 # Avoid programs freezing terminals
 ttyctl -f
+
+# Plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
+ZSH_AUTOSUGGEST_STRATEGY='completion'
 
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v=${EDITOR}
-alias gs='git status'
-alias ga='git add .'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
 alias gp='git push'
+alias gs='git status'
+alias tmux='tmux -2'

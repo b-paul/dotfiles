@@ -28,7 +28,11 @@ super + shift + {_,alt + }c
 
 # lock screen
 super + x
-    i3lock
+    lock
+
+# spawn ncmpcpp in floating
+super + n
+    st -c ncmpcpp -e ncmpcpp
 
 #
 # state/flags
