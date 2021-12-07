@@ -1,0 +1,12 @@
+lemonbarlaunch &
+
+xsetroot -cursor_name left_ptr
+wp
+
+xbindkeys
+
+#systemctl --user start polybar.service
+systemctl --user import-environment DISPLAY
+systemctl --user start dunst.service
+
+urxvt &

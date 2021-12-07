@@ -1,0 +1,27 @@
+#!/bin/sh
+
+file="$$"
+params="$*"
+
+[[ -z $params ]] && params=$(echo " " | dmenu -c)
+[[ -z $params ]] && exit
+
+#if ! curl $params > /dev/null 2>&1; then
+    # most of this is from https://github.com/sayan01/scripts/blob/master/yt
+    params=$(echo $params | sed \
+        -e 's|+|%2B|g'\
+        -e 's|#|%23|g'\
+        -e 's|&|%26|g'\
+        -e 's| |+|g')
+    ids=$(curl -s https://www.youtube.com/results?search_query=$params | \
+        grep -oP '"videoRenderer":{"videoId":".{11}".+?"text":".+?[^\\](?=")' | \
+        sed 's|\\\"|"|g' | \
+        awk -F\" '{print $6 " " $NF}')
+
+    name=$(echo -e "$ids" | awk '{$1="";print $0}' | dmenu -c -l 10) || exit
+    params=https://youtu.be/$(echo -e "$ids" | grep "$name" | head -1 | cut -s -d ' ' -f 1)
+#fi
+youtube-dl --no-playlist -f mp4 -o $file $params ||\
+    $(rm $file* && exit)
+mpv $file
+rm $file*

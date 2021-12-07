@@ -1,0 +1,11 @@
+#!/bin/sh
+
+prompt=$(echo "" | dmenu -c -p "URL:")
+
+[[ -z $prompt ]] && exit
+
+if ping $prompt -c 4 > /dev/null 2>&1; then
+    firefox --new-tab "$prompt"
+else
+    firefox --search "$prompt"
+fi

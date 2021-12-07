@@ -1,0 +1,32 @@
+#!/bin/sh
+
+usage() {
+    echo "usage: $(basename $0) [-fu]"
+    echo "  -f [FILE]         choose file to output the scrot to"
+    echo "  -u                screenshot only the focused window"
+    exit 1
+}
+
+scrot_args=" "
+file="/tmp/scr_$$.png"
+
+while [ $# -gt 0 ]; do
+    case $1 in
+        -u)
+            scrot_args+="-u "
+            shift
+            ;;
+        -f)
+            file="$2"
+            shift
+            ;;
+        -*)
+            usage
+            ;;
+        *)
+            break
+    esac
+done
+
+scrot $scrot_args $file
+curl -s -F"file=@$file" http://0x0.st | xclip -selection c

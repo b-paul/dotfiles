@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo " $(echo '' | dmenu | bc)"; bspc config top_padding 20 && sleep 3 | notify-send -

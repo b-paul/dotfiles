@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Hide or show the cursor in the terminal
+
+case $1 in
+    h)
+        echo -ne '\033[?25l'
+        ;;
+    s)
+        echo -ne '\033[?25h'
+        ;;
+esac

@@ -1,0 +1,12 @@
+#!/bin/sh
+# bspwm full screen mode but it is actually tiling mode and you can still tile stuff there are just no gaps and stuff
+
+gap=$(bspc config window_gap)
+
+if [ $gap == 12 ]; then
+    bspc config window_gap 0
+    bspc config top_padding 0
+else
+    bspc config window_gap 12
+    bspc config top_padding 20
+fi

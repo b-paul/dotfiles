@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LOCK_COLOUR="000000"
+
+#i3lock --nofork --show-failed-attempts --color=$LOCK_COLOUR --pointer=win --clock
+i3lock --nofork \
+    --show-failed-attempts --blur=1 \
+    --pointer=win \
+    --clock \
+    --indicator \
+    --ring-color=ff00ff \
+    --time-color=ffffff \
+    --date-color=ffffff

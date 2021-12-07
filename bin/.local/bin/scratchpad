@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[[ -z $(bspc query -N -n any.sticky) ]] && urxvt -name scratchpad &
+
+bspc node any.sticky -g hidden
+bspc node any.sticky -f
