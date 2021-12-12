@@ -13,41 +13,41 @@ require 'packer' .startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-dispatch'
 
+    use 'rktjmp/lush.nvim'
+
     use '~/.config/nvim/plugins/theme'
 
-    use { 'norcalli/nvim-colorizer.lua', config = require 'plugins/nvim_colorizer' }
+    use { 'norcalli/nvim-colorizer.lua', config = function() require 'plugins/nvim_colorizer' end }
 
     use 'mhinz/vim-startify'
 
     use 'mattn/calendar-vim'
 
-    use { 'neovim/nvim-lspconfig', config = require 'plugins/lsp' }
+    use { 'neovim/nvim-lspconfig', config = function() require 'plugins/lsp' end }
 
-    use { 'hrsh7th/nvim-compe', config = require 'plugins/compe' }
-    use { 'L3MON4D3/LuaSnip', config = require 'plugins/luasnip' }
+    use { 'hrsh7th/nvim-compe', config = function() require 'plugins/compe' end }
+    use { 'L3MON4D3/LuaSnip', config = function() require 'plugins/luasnip' end }
 
     use 'tweekmonster/startuptime.vim'
 
-    use { 'lervag/vimtex', config = require 'plugins/vimtex' }
+    use { 'lervag/vimtex', config = function() require 'plugins/vimtex' end }
 
     use 'fidian/hexmode'
 
-    use 'rktjmp/lush.nvim'
-
-    --use { 'famiu/feline.nvim', config = require 'plugins/feline' }
+    --use { 'famiu/feline.nvim', config = require 'plugins/feline' end }
 
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        config = require 'plugins/treesitter'
+        config = function() require 'plugins/treesitter' end
     }
-    use 'p00f/nvim-ts-rainbow'
+    -- use 'p00f/nvim-ts-rainbow'
     -- https://github.com/nvim-treesitter/nvim-treesitter-refactor ?
 
     use {
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} },
-      config = require 'plugins/telescope'
+      config = function() require 'plugins/telescope' end
     }
     use 'nvim-telescope/telescope-bibtex.nvim'
     use 'nvim-telescope/telescope-cheat.nvim'
