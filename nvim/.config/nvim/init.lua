@@ -4,5 +4,5 @@ require 'map'
 require 'commands'
 
 --if packer_plugins["lush.nvim"] and packer_plugins["lush.nvim"].loaded then
-    load 'colours'
+    --load 'colours'
 --end

@@ -38,7 +38,17 @@ require'telescope'.setup{
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 
+    extensions = {
+        ["ui-select"] = {
+            require'telescope.themes'.get_dropdown {
+                -- idk what goes here
+            }
+        }
+    },
+
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+
+require'telescope'.load_extension'ui-select'

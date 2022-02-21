@@ -116,7 +116,7 @@ local theme = lush(function()
     -- NormalFloat  { }, -- Normal text in floating windows.
     -- NormalNC     { }, -- normal text in non-current windows
     Pmenu        { bg = bg.lighten(20), fg = fg.darken(20) }, -- Popup menu: normal item.
-    -- PmenuSel     { }, -- Popup menu: selected item.
+    PmenuSel     { bg = Pmenu.bg.darken(20), fg = Pmenu.fg.darken(10) }, -- Popup menu: selected item.
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
     -- Question     { }, -- |hit-enter| prompt and yes/no questions

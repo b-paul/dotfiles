@@ -4,6 +4,10 @@ vim.cmd 'packadd packer.nvim'
 
 --vim._update_package_paths()
 
+-- TODO
+-- modulize more
+-- e.g. rust-tools should only initialize for rust files
+
 require 'packer' .startup(function()
     use 'wbthomason/packer.nvim'
 
@@ -24,7 +28,9 @@ require 'packer' .startup(function()
     use 'mattn/calendar-vim'
 
     use { 'neovim/nvim-lspconfig', config = function() require 'plugins/lsp' end }
+    use 'simrat39/rust-tools.nvim'
 
+    -- TODO Switch to nvim-cmp
     use { 'hrsh7th/nvim-compe', config = function() require 'plugins/compe' end }
     use { 'L3MON4D3/LuaSnip', config = function() require 'plugins/luasnip' end }
 
@@ -56,4 +62,5 @@ require 'packer' .startup(function()
     use 'nvim-telescope/telescope-packer.nvim'
     use 'nvim-telescope/telescope-snippets.nvim'
     use 'nvim-telescope/telescope-symbols.nvim'
+    use 'nvim-telescope/telescope-ui-select.nvim'
 end)
