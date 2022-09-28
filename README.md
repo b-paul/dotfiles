@@ -22,6 +22,7 @@ Software to try:
 Awesome
 Sway
 River
+Kiwmi
 Openbox
 
 Kitty
@@ -31,5 +32,6 @@ Fish
 
 Rofi
 
+Yambar
 
 (Pretend there are screenshots here)

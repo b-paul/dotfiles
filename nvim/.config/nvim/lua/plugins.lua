@@ -8,7 +8,7 @@ vim.cmd 'packadd packer.nvim'
 -- modulize more
 -- e.g. rust-tools should only initialize for rust files
 
-require 'packer' .startup(function()
+require 'packer'.startup(function()
     use 'wbthomason/packer.nvim'
 
     use 'gruvbox-community/gruvbox'
@@ -21,39 +21,52 @@ require 'packer' .startup(function()
 
     use '~/.config/nvim/plugins/theme'
 
-    use { 'norcalli/nvim-colorizer.lua', config = function() require 'plugins/nvim_colorizer' end }
+    use 'norcalli/nvim-colorizer.lua'
 
     use 'mhinz/vim-startify'
 
     use 'mattn/calendar-vim'
 
-    use { 'neovim/nvim-lspconfig', config = function() require 'plugins/lsp' end }
+    -- This is cool
+    --use 'vimpostor/vim-tpipeline'
+
+    use 'nvim-orgmode/orgmode'
+
+    use 'neovim/nvim-lspconfig'
     use 'simrat39/rust-tools.nvim'
 
-    -- TODO Switch to nvim-cmp
-    use { 'hrsh7th/nvim-compe', config = function() require 'plugins/compe' end }
-    use { 'L3MON4D3/LuaSnip', config = function() require 'plugins/luasnip' end }
+    use 'L3MON4D3/LuaSnip'
+    -- TODO switch to coq!!!
+    use 'hrsh7th/nvim-cmp'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-calc'
+
+    use 'lukas-reineke/cmp-rg'
+    use 'f3fora/cmp-spell'
+    use 'kdheepak/cmp-latex-symbols'
+
 
     use 'tweekmonster/startuptime.vim'
 
-    use { 'lervag/vimtex', config = function() require 'plugins/vimtex' end }
+    use 'lervag/vimtex'
 
     use 'fidian/hexmode'
-
-    --use { 'famiu/feline.nvim', config = require 'plugins/feline' end }
 
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        config = function() require 'plugins/treesitter' end
     }
-    -- use 'p00f/nvim-ts-rainbow'
     -- https://github.com/nvim-treesitter/nvim-treesitter-refactor ?
 
     use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} },
-      config = function() require 'plugins/telescope' end
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use 'nvim-telescope/telescope-bibtex.nvim'
     use 'nvim-telescope/telescope-cheat.nvim'
