@@ -82,7 +82,15 @@ require 'rust-tools'.setup({
                 checkOnSave = {
                     allTargets = false,
                 },
+                inlayHints = { locationLinks = false },
             }
+        }
+    }
+})
+require 'zk'.setup({
+    lsp = {
+        config = {
+            on_attach = on_attach,
         }
     }
 })

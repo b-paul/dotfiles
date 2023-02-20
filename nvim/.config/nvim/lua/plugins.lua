@@ -27,16 +27,21 @@ require 'packer'.startup(function()
 
     use 'mattn/calendar-vim'
 
+    use 'jbyuki/nabla.nvim'
+
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
     -- This is cool
     --use 'vimpostor/vim-tpipeline'
 
     use 'nvim-orgmode/orgmode'
 
+    use 'mickael-menu/zk-nvim'
+
     use 'neovim/nvim-lspconfig'
     use 'simrat39/rust-tools.nvim'
 
     use 'L3MON4D3/LuaSnip'
-    -- TODO switch to coq!!!
     use 'hrsh7th/nvim-cmp'
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-buffer'
