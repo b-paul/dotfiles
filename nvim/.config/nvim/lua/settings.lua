@@ -47,3 +47,10 @@ vim.wo.signcolumn = "yes"
 -- Colour column shows the text width of a file
 vim.wo.colorcolumn = vim.wo.colorcolumn .. '+' .. 1
 for i = 2,255 do vim.wo.colorcolumn = vim.wo.colorcolumn .. ',+' .. i end
+
+-- Create the typst filetype!
+vim.filetype.add({
+    extension = {
+        typ = 'typst',
+    },
+})

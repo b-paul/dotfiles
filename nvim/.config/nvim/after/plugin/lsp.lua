@@ -55,6 +55,12 @@ require 'lspconfig'.hls.setup {
 require 'lspconfig'.texlab.setup {
     on_attach = on_attach,
 }
+require 'lspconfig'.typst_lsp.setup {
+    on_attach = on_attach,
+    settings = {
+        --exportPdf = "onType"
+    }
+}
 require 'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,
     settings = {
