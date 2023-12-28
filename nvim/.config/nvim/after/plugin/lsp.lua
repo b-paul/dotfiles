@@ -55,6 +55,12 @@ require 'lspconfig'.hls.setup {
 require 'lspconfig'.texlab.setup {
     on_attach = on_attach,
 }
+local cssls_capabilities = vim.lsp.protocol.make_client_capabilities()
+cssls_capabilities.textDocument.completion.completionItem.snippetSupport = true
+require 'lspconfig'.cssls.setup {
+    on_attach = on_attach,
+    capabilities = cssls_capabilities
+}
 require 'lspconfig'.typst_lsp.setup {
     on_attach = on_attach,
     settings = {

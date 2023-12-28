@@ -40,6 +40,7 @@ require 'packer'.startup(function()
 
     use 'neovim/nvim-lspconfig'
     use 'simrat39/rust-tools.nvim'
+    use 'mrcjkb/haskell-tools.nvim'
 
     use 'L3MON4D3/LuaSnip'
     use 'hrsh7th/nvim-cmp'
